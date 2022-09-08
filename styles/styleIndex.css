@@ -34,6 +34,7 @@ body{
     margin-right: 3%;
     margin-left: 3%;
     transition: right .8s ease-in-out;
+    box-shadow: 3px 5px 15px;
   }
   
   
