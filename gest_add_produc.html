@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styleGestUsers.css">
+    <title>Document</title>
+</head>
+<body><!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Usuarios</title>
+        <link rel="stylesheet" href="styles/stylePlataforma.css">
+        <link rel="stylesheet" href="styles/bootstrap.min.css">
+    </head>
+    <body>
+        <header>
+           <h1>Inventory App</h1> 
+           <div class="logo">
+            <a href="/plataforma.html">
+            <img src="img/logoInventory.PNG" alt="" width="100">
+        </a>
+            <div class="perfil">
+                <h3>Usuario</h2>
+            </div>
+        </div>
+        </header>
+        <h1 class="titulo">Registrar o editar producto</h1>
+        <br>
+
+
+
+
+          <div>
+            <table style="margin: 0 auto;">
+                <tr>
+                    <td>              
+                        <label for="exampleFormControlInput1">Código</label>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese el código">
+                    </td>
+                </tr>
+                <tr>
+                    <td>              
+                        <label for="exampleFormControlInput2">Nombre</label>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Ingrese el nombre">
+                    </td>
+                </tr>  
+                <tr>
+                    <td>
+                        <label for="exampleFormControlTextarea1">Descripción</label>                    
+                    </td>
+                    <td>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Ingrese una descripción del producto"></textarea>
+                    </td>
+                </tr>  
+                <tr>
+                    <td>
+                        <label for="exampleFormControlInput3">Cantidad</label>
+                    </td>
+                    <td>
+                        <input type="number" class="form-control" id="exampleFormControlInput3" min="0" placeholder="Ingrese la cantidad">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="exampleFormControlInput4">Existencia</label>
+                    </td>
+                    <td>
+                        <input type="number" class="form-control" id="exampleFormControlInput4" min="0" placeholder="Ingrese la existencia inicial">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="exampleFormControlInput4">Precio</label>        
+                    </td>
+                    <td>
+                        <input type="number" class="form-control" id="exampleFormControlInput4" min="0" placeholder="Ingrese el precio">
+                    </td>
+                </tr>
+            </table>
+        </div> 
+
+
+
+<div style="text-align: center;">
+    <br>
+    <button onclick="location.href='/gest_produc.html'" type="button" class="btn btn-primary btn-lg" style="background-color: rgb(103, 226, 103); border-color:rgb(103, 226, 103) ;">Guardar</button>
+    <button onclick="location.href='/gest_produc.html'" type="button" class="btn btn-secondary btn-lg">Cancelar</button>
+</div>
+
+<div class="form-group">
+  </div>
+
+    </body>
+    </html>
+    
+</body>
+</html>
