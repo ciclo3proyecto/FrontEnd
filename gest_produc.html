@@ -22,18 +22,63 @@
     </header>
     <h1 class="titulo">GESTIÓN DE PRODUCTOS</h1>
 
-    <div class="input-group rounded">
-        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-            aria-describedby="search-addon" />
-        <span class="input-group-text border-0" id="search-addon">
-            <i class="fas fa-search"></i>
-        </span>
-    </div>
+    <div class="input-group">
+        <input type="search" class="form-control rounded" placeholder="Que desea buscar" aria-label="Search" aria-describedby="search-addon" />
+        <button type="button" class="btn btn-outline-primary" style="background-color: rgb(103, 226, 103); border-color:rgb(103, 226, 103) ;">Buscar</button>
+      </div>
 
+    <br>
     <div>
         <button onclick="location.href='/gest_add_produc.html'" type="button"
             class="btn btn-primary btn-lg" style="background-color: rgb(103, 226, 103); border-color:rgb(103, 226, 103) ;">Agregar</button>
         <a href="/gest_add_produc.html"></a>
+    </div>
+
+    <br>
+    <div>
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Existencia</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Cortina</td>
+                <td>3</td>
+                <td>$42000</td>
+                <td>                    
+                    <button onclick="location.href='/gest_add_produc.html'" type="button" class="btn btn-primary btn-sm" style="background-color: rgb(103, 226, 103); border-color:rgb(103, 226, 103) ;">Editar</button>
+                    <button type="button" class="btn btn-secondary btn-sm">Eliminar</button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Tocador</td>
+                <td>5</td>
+                <td>$125000</td>
+                <td>                    
+                    <button onclick="location.href='/gest_add_produc.html'" type="button" class="btn btn-primary btn-sm" style="background-color: rgb(103, 226, 103); border-color:rgb(103, 226, 103) ;">Editar</button>
+                    <button type="button" class="btn btn-secondary btn-sm">Eliminar</button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Lámpara</td>
+                <td>5</td>
+                <td>$60000</td>
+                <td>                    
+                    <button onclick="location.href='/gest_add_produc.html'" type="button" class="btn btn-primary btn-sm" style="background-color: rgb(103, 226, 103); border-color:rgb(103, 226, 103) ;">Editar</button>
+                    <button type="button" class="btn btn-secondary btn-sm">Eliminar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
     </div>
     
 </body>
