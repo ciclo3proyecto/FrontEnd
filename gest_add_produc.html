@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="styles/styleGestUsers.css">
     <title>Document</title>
 </head>
+
 <body><!DOCTYPE html>
     <html lang="es">
     <head>
@@ -18,6 +20,7 @@
         <link rel="stylesheet" href="styles/stylePlataforma.css">
         <link rel="stylesheet" href="styles/bootstrap.min.css">
     </head>
+    
     <body>
         <header>
            <h1>Inventory App</h1> 
@@ -31,74 +34,68 @@
         </div>
         </header>
         <h1 class="titulo">Registrar o editar producto</h1>
+        
         <br>
-
-
-
-
-          <div>
+        <form method="get">
             <table style="margin: 0 auto;">
+
+            <div class="form-group">
                 <tr>
                     <td>              
-                        <label for="exampleFormControlInput1">Código</label>
+                        <label for="campoCodigo">Código</label>
                     </td>
                     <td>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese el código">
+                        <input type="text" class="form-control" id="campoCodigo" placeholder="Ingrese el código" name="cCodigo">
                     </td>
                 </tr>
                 <tr>
                     <td>              
-                        <label for="exampleFormControlInput2">Nombre</label>
+                        <label for="campoNombre">Nombre</label>
                     </td>
                     <td>
-                        <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Ingrese el nombre">
+                        <input type="text" class="form-control" id="campoNombre" placeholder="Ingrese el nombre" name="cNombre">
                     </td>
                 </tr>  
                 <tr>
                     <td>
-                        <label for="exampleFormControlTextarea1">Descripción</label>                    
+                        <label for="campoDescripcion">Descripción</label>                    
                     </td>
                     <td>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Ingrese una descripción del producto"></textarea>
+                        <textarea class="form-control" id="campoDescripcion" rows="3" placeholder="Ingrese una descripción del producto" name="cDescripcion"></textarea>
                     </td>
                 </tr>  
                 <tr>
                     <td>
-                        <label for="exampleFormControlInput3">Cantidad</label>
+                        <label for="campoCantidad">Cantidad</label>
                     </td>
                     <td>
-                        <input type="number" class="form-control" id="exampleFormControlInput3" min="0" placeholder="Ingrese la cantidad">
+                        <input type="number" class="form-control" id="campoCantidad" min="0" placeholder="Ingrese la cantidad" nam="cCantidad">
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <label for="exampleFormControlInput4">Existencia</label>
+                        <label for="campoExistencia">Existencia</label>
                     </td>
                     <td>
-                        <input type="number" class="form-control" id="exampleFormControlInput4" min="0" placeholder="Ingrese la existencia inicial">
+                        <input type="number" class="form-control" id="campoExistencia" min="0" placeholder="Ingrese la existencia inicial" name="cExistencia">
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <label for="exampleFormControlInput4">Precio</label>        
+                        <label for="campoPrecio">Precio</label>        
                     </td>
                     <td>
-                        <input type="number" class="form-control" id="exampleFormControlInput4" min="0" placeholder="Ingrese el precio">
+                        <input type="number" class="form-control" id="campoPrecio" min="0" placeholder="Ingrese el precio" name="cPrecio">
                     </td>
                 </tr>
-            </table>
-        </div> 
-
-
-
-<div style="text-align: center;">
-    <br>
-    <button onclick="location.href='/gest_produc.html'" type="button" class="btn btn-primary btn-lg" style="background-color: rgb(103, 226, 103); border-color:rgb(103, 226, 103) ;">Guardar</button>
-    <button onclick="location.href='/gest_produc.html'" type="button" class="btn btn-secondary btn-lg">Cancelar</button>
-</div>
-
-<div class="form-group">
-  </div>
+            </div>
+        </table>
+        <br>
+        <div style="text-align: center;">
+            <button type="submit" class="btn btn-primary btn-lg" style="background-color: rgb(103, 226, 103); border-color:rgb(103, 226, 103) ;">Guardar</button>
+            <button onclick="location.href='/gest_produc.html'" type="button" class="btn btn-secondary btn-lg">Cancelar</button>
+        </div>
+    </form> 
 
     </body>
     </html>
