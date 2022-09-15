@@ -5,46 +5,49 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>login_inventory</title>
+  <title>Inventory App</title>
+  <link rel="icon" type="image/jpg" href="img/logoInventory.PNG"/>
   <link rel="stylesheet" href="styles/styleIndex.css">
   <link rel="stylesheet" href="styles/bootstrap.min.css">
   <link rel="stylesheet" href="styles/styleGestUsers.css">
 </head>
 
 <body>
-  <!-- fondo y cuadro negro-->
-  <div class="container">
-
-    <div class="backbox">
-      <div class="loginMsg">
-        <div class="textcontenido">
-          <p class="title">Bienvenido a Inventory APP</p>
-          <p>Simplicidad y Eficiencia</p>
-          <img src="img/logoInventory.PNG" alt="" width="200px">
+  <main>
+    <!-- fondo y cuadro negro-->
+    <div class="container">
+      <div class="backbox">
+        <div class="loginMsg">
+          <div class="textcontenido">
+            <p class="title">Bienvenido a Inventory App</p>
+            <p>Simplicidad y Eficiencia</p>
+            <img src="img/logoInventory.PNG" alt="" width="200px">
+          </div>
+        </div>
+        <div class="signupMsg visibility">
+          <div class="textcontent">
+          </div>
         </div>
       </div>
-      <div class="signupMsg visibility">
-        <div class="textcontent">
+      
+      <!-- cuadro blanco log -->
+      <div class="frontbox">
+        <div class="login">
+          <h2>LOG IN</h2>
+          <div class="inputbox">
+            <form id="form_login" method="post" action="/plataforma.html">
+              <input id="login" type="text" name="login" placeholder="  Usuario" required>
+              <input type="password" name="password" placeholder="  Contraseña" required>
+              <button id="inicio_sesion" type="submit" class="btn btn-primary btn-lg"
+                style="background-color: rgb(103, 226, 103); border-color:rgb(103, 226, 103) ;">Ingresar</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
-    <!-- cuadro blanco log -->
+  </main>
 
-    <div class="frontbox">
-      <div class="login">
-        <h2>LOG IN</h2>
-        <div class="inputbox">
-          <form method="get" action="/plataforma.html">
-            <input id="login" type="text" name="login" placeholder="  Usuario" required>
-            <input type="password" name="password" placeholder="  Contraseña" required>
-            <button type="submit" class="btn btn-primary btn-lg"
-              style="background-color: rgb(103, 226, 103); border-color:rgb(103, 226, 103) ;">Ingresar</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  <script src="js/login.js"></script>
 </body>
 
 </html>
