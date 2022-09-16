@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios</title>
+    <link rel="stylesheet" href="../styles/stylePlataforma.css">
+    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>Inventory App</h1>
+        <div class="logo">
+            <a href="plataforma.html">
+                <img src="../img/logoInventory.PNG" alt="" width="100">
+            </a>
+            <div class="perfil">
+                <h3>Usuario</h2>
+            </div>
+        </div>
+    </header>
+    <h1 class="titulo">GESTIÓN DE USUARIOS</h1>
+
+    <div class="input-group">
+        <input type="search" class="form-control rounded" placeholder="Que desea buscar" aria-label="Search" aria-describedby="search-addon" />
+        <button type="button" class="btn btn-outline-primary" style="background-color: rgb(103, 226, 103); border-color:rgb(103, 226, 103) ;">Buscar</button>
+      </div>
+
+    <br>
+    <div>
+        <button onclick="location.href='gest_add_users.html'" type="button"
+            class="btn btn-primary btn-lg" style="background-color: rgb(103, 226, 103); border-color:rgb(103, 226, 103) ;">Agregar</button>
+        <a href="gest_add_users.html"></a>
+    </div>
+
+    <br>
+    <div>
+        <table class="table table-striped" >
+            <thead>
+              <tr>
+                <th scope="col">Usuario</th>
+                <th scope="col">Nombre y apellidos</th>
+                <th scope="col">Perfil</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark Lopez Díaz</td>
+                <td>Empleado</td>
+                <td>
+                    <button onclick="location.href='gest_add_users.html'" type="button" class="btn btn-primary btn-sm" style="background-color: rgb(103, 226, 103); border-color:rgb(103, 226, 103) ;">Editar</button>
+                    <button type="button" class="btn btn-secondary btn-sm">Eliminar</button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob Thornton F</td>
+                <td>Gerente</td>
+                <td>                    
+                    <button onclick="location.href='gest_add_users.html'" type="button" class="btn btn-primary btn-sm" style="background-color: rgb(103, 226, 103); border-color:rgb(103, 226, 103) ;">Editar</button>
+                    <button type="button" class="btn btn-secondary btn-sm">Eliminar</button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry Bird</td>
+                <td>                    
+                    <button onclick="location.href='gest_add_users.html'" type="button" class="btn btn-primary btn-sm" style="background-color: rgb(103, 226, 103); border-color:rgb(103, 226, 103) ;">Editar</button>
+                    <button type="button" class="btn btn-secondary btn-sm">Eliminar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios</title>
+    <link rel="stylesheet" href="../styles/stylePlataforma.css">
+    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/styleGestUsers.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Inventory App</h1>
+        <div class="logo">
+            <a href="plataforma.html">
+                <img src="../img/logoInventory.PNG" alt="" width="100">
+            </a>
+            <div class="perfil">
+                <h3>Usuario</h2>
+            </div>
+        </div>
+    </header>
+
+    <h1 class="titulo">Registrar o editar producto</h1>
+
+    <br>
+    <form method="get" action="gest_produc.html">
+        <table style="margin: 0 auto;">
+            <div class="form-group">
+                <tr>
+                    <td>
+                        <label for="campoCodigo">Código (*)</label>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" id="campoCodigo" placeholder="Ingrese el código"
+                            name="cCodigo" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="campoNombre">Nombre (*)</label>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" id="campoNombre" placeholder="Ingrese el nombre"
+                            name="cNombre" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="campoDescripcion">Descripción</label>
+                    </td>
+                    <td>
+                        <textarea class="form-control" id="campoDescripcion" rows="3"
+                            placeholder="Ingrese una descripción del producto" name="cDescripcion"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="campoCantidad">Cantidad (*)</label>
+                    </td>
+                    <td>
+                        <input type="number" class="form-control" id="campoCantidad" min="0"
+                            placeholder="Ingrese la cantidad" name="cCantidad" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="campoExistencia">Existencia</label>
+                    </td>
+                    <td>
+                        <input type="number" class="form-control" id="campoExistencia" min="0"
+                            placeholder="Ingrese la existencia inicial" name="cExistencia">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="campoPrecio">Precio (*)</label>
+                    </td>
+                    <td>
+                        <input type="number" class="form-control" id="campoPrecio" min="0"
+                            placeholder="Ingrese el precio" name="cPrecio" required>
+                    </td>
+                </tr>
+            </div>
+        </table>
+        <br>
+        <div style="text-align: center;">
+            <button type="submit" class="btn btn-primary btn-lg"
+                style="background-color: rgb(103, 226, 103); border-color:rgb(103, 226, 103) ;">Guardar</button>
+            <button onclick="location.href='gest_produc.html'" type="button"
+                class="btn btn-secondary btn-lg">Cancelar</button>
+        </div>
+    </form>
+
+</body>
+
+</html>
