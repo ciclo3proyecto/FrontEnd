@@ -2,60 +2,51 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inventory App</title>
-  <link rel="icon" type="image/jpg" href="img/logoInventory.PNG" />
-  <link rel="stylesheet" href="styles/styleIndex.css">
-  <link rel="stylesheet" href="styles/bootstrap.min.css">
-  <link rel="stylesheet" href="styles/styleGestUsers.css">
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Inventory App</title>
+   <link rel="icon" type="image/jpg" href="img/logoInventory.PNG" />
+   <link rel="stylesheet" href="styles/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+   <link href="styles/styleindex.css" rel="stylesheet" id="styleindex-css">
 </head>
 
-<body class="container mt-5">
 
-  <!-- fondo y cuadro negro-->
-  <div class="container">
+<body>
 
-    <div class="backbox">
-      <div class="loginMsg">
-        <div class="textcontenido">
-          <p class="title">Bienvenido a Inventory APP</p>
-          <p>Simplicidad y Eficiencia</p>
-          <img src="img/logoInventory.PNG" alt="" width="200px">
-        </div>
+   <!------ Include the above in your HEAD tag ---------->
+   <div class="sidenav">
+      
+   </div>
+   <div class="main">
+      <div class="col-md-6 col-sm-12">
+         <div class="login-form">
+            <div class="login-main-text">
+               <h2>InventoryApp</h2>
+               <p>Simplicidad y Eficiencia.</p>
+            </div>
+            
+               <div class="form-group">
+                  <label>Usuario</label>
+                  <input type="text" name="usuario" class="form-control" placeholder="Ingrese su usuario" required>
+               </div>
+               <div class="form-group">
+                  <label>Clave</label>
+                  <input type="password" name="clave" class="form-control" placeholder="Ingrese su clave" required>
+               </div>
+               <button type="submit" id="btnIngresar" onclick="loguearse()" class="btn btn-ingresar">Ingresar</button>
+               
+               <div id="errorBox" class="form-error">
+               </div>
+            
+         </div>
       </div>
-      <div class="signupMsg visibility">
-        <div class="textcontent">
-        </div>
-      </div>
-    </div>
+   </div>
 
-    <!-- cuadro blanco log -->
-    <div class="frontbox">
-      <div class="login">
-        <h2>LOG IN</h2>
-        <div class="inputbox">
-          <input type="text" name="login" placeholder="  Usuario" required>
-          <input type="password" name="password" placeholder="  Contraseña" required>
-          <button id="btnIngresar" type="submit" onclick="loguearse()" class="btn btn-primary btn-lg"
-            style="background-color: rgb(103, 226, 103); border-color:rgb(103, 226, 103) ;">Ingresar</button>
-        </div>
-      </div>
-
-    </div>
-
-
-    <!--Scrips de javascript -->
-    <!--primero va el jquery -->
-    <script src="js/jquery-3.6.1.min.js"></script>
-    <!--segundo va el boostrap -->
-    <script src="js/bootstrap.min.js"></script>
-    <!--y los demas -->
-    <script src="js/index.js"></script>
-    <script src="js/usuariosServices.js"></script>
-
-
+   <script src="js/bootstrap.min.js"></script>
+   <script src="js/jquery-3.6.1.min.js"></script>
+   <script src="js/index.js"></script>
+   <script src="js/usuariosServices.js"></script>
 </body>
 
 </html>
