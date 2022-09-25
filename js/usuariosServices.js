@@ -56,7 +56,7 @@ estructura del json que devuelve:
 */
 async function permisos(perfil, padreId) {
 
-  const url = `${urlBase}usuarios/permisos?perfil_id=${perfil}&padre_id=${padreId}`;
+  const url = `${urlBase}permisos?perfil_id=${perfil}&padre_id=${padreId}`;
 
   try {
 

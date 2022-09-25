@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <title>Inventory App - Opciones</title>
   <link rel="icon" type="image/jpg" href="../img/logoInventory.PNG" />
   <link rel="stylesheet" href="../styles/bootstrap.min.css" />
@@ -24,8 +25,8 @@
 
       <span id="lblUsuario" class="navbar-brand mb-0 h-25">
         Carlos Alberto Vivas Reinoso
-        <button type="button" class="btn btn-outline-dark">Cerrar</button>
       </span>
+      <button type="button" onclick="CerrarSesion()" class="btn btn-outline-dark">Cerrar</button>
     </div>
   </nav>
 

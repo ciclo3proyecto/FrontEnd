@@ -33,7 +33,6 @@ async function loguearse() {
     window.location.href = "templates/plataforma.html"
   }
   else {
-    //mensaje("Mensaje del sistema","Los datos ingresados son invalidos.")
     showError("Los datos ingresados son invalidos.");
   }
 
