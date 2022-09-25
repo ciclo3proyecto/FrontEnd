@@ -29,6 +29,7 @@ async function loguearse() {
     sessionStorage.setItem("nombreUsuario", `${ojson.nombres} ${ojson.primerapellido} ${ojson.segundoapellido}`);
     sessionStorage.setItem("perfil", ojson.perfilesId);
     sessionStorage.setItem("codigoUsuario", ojson.id);
+    sessionStorage.setItem("nombrePerfil", ojson.nombrePerfil);
 
     window.location.href = "templates/plataforma.html"
   }
