@@ -14,3 +14,11 @@ myModalEl.addEventListener('hidden.bs.modal', event => {
     window.location="../index.html"
 })
 */
+
+//Me permite abrir un formulario
+const rutas = (formulario) => {
+
+    window.location.href = formulario;
+
+};
+

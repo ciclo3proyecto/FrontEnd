@@ -1,41 +1,123 @@
-h1,h3{
+h1,
+h3 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 }
-body{
-    
+
+body {
+
     background-color: rgb(222, 252, 232);
 }
 
-.body, header{
+#imagenModulo {
+    height:150px;
+    width:100%;
+  }
+
+.body,
+header {
     height: 50%;
     box-shadow: 2px 2px 10px rgb(19, 18, 18);
     padding: 30px;
     background-color: rgb(103, 226, 103);
     text-align: center;
 }
-.titulo{
-    margin-top: 50px; 
-        text-align: center;
+
+.titulo {
+    margin-top: 50px;
+    text-align: center;
 }
 
-.logo{
+.logo {
     text-align: left;
     margin-top: -70px;
-    }
-.perfil, h3{
+}
+
+.perfil,
+h3 {
     text-align: right;
     margin-top: -65px;
     margin-right: 20px;
     font-size: 5px;
 
-    }
-    article{
-        padding-top: 10px;
-        padding-left: 250px;
-        padding-right: 250px;
-        padding-bottom: 200px;
-        }
-    article, .h5{
-        text-align: center;
-    }
+}
+
+article {
+    padding-top: 10px;
+    padding-left: 250px;
+    padding-right: 250px;
+    padding-bottom: 200px;
+}
+
+article,
+.h5 {
+    text-align: center;
+}
+
+div [class^="col-"] {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+}
+
+.card {
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.card-title {
+    font-size: 15px;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.card-title i {
+    font-size: 15px;
+    transition: 1s;
+    cursor: pointer;
+    color: #ffa710
+}
+
+.card-title i:hover {
+    transform: scale(1.25) rotate(100deg);
+    color: #18d4ca;
+
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card-text {
+    height: 80px;
+}
+
+.card::before,
+.card::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: scale3d(0, 0, 1);
+    transition: transform .3s ease-out 0s;
+    background: rgba(255, 255, 255, 0.1);
+    content: '';
+    pointer-events: none;
+}
+
+.card::before {
+    transform-origin: left top;
+}
+
+.card::after {
+    transform-origin: right bottom;
+}
+
+.card:hover::before,
+.card:hover::after,
+.card:focus::before,
+.card:focus::after {
+    transform: scale3d(1, 1, 1);
+}
