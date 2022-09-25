@@ -37,7 +37,7 @@ const mostrarOpciones = async  (perfil,padreId) => {
             
             modulosContainer.innerHTML += 
             `<div class="col-md-3 col-sm-6">
-                <div class="card card-block" onclick="${permiso.ruta}">
+                <div class="card card-block" onclick="rutas('${permiso.ruta}')">
                     <img id="imagenModulo" src="${permiso.rutaImagen}" alt="Photo of sunset">
                     <h5 class="card-title mt-3 mb-3">${permiso.opcion}</h5>
                 </div>
