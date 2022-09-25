@@ -9,7 +9,11 @@ document.addEventListener('DOMContentLoaded', () =>{
         return
     }
 
+
+
     document.getElementById("lblUsuario").innerText=`Bienvenido ${nombre}`
+
+    return;
 
     mostrarOpciones(perfil,0);
 
