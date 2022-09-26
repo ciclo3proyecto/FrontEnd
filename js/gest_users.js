@@ -60,7 +60,6 @@ const listarDatos = async () => {
         alert("Erro al consumir servicio de usuarios.");
     }
 
-    console.log(data)
 }
 
 

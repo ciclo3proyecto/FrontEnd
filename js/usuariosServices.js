@@ -1,4 +1,4 @@
-const urlBase = "http://InventoryApp.somee.com/usuarios/";
+const urlBaseUsuarios = "http://InventoryApp.somee.com/usuarios/";
 
 
 /*
@@ -15,7 +15,7 @@ estructura del json que devuelve:
 */
 async function login(usuario, clave) {
 
-  const url = urlBase + "login";
+  const url = urlBaseUsuarios + "login";
 
   const json = JSON.stringify({
     login: usuario,
@@ -56,7 +56,7 @@ estructura del json que devuelve:
 */
 async function permisos(perfil, padreId) {
 
-  const url = `${urlBase}permisos?perfil_id=${perfil}&padre_id=${padreId}`;
+  const url = `${urlBaseUsuarios}permisos?perfil_id=${perfil}&padre_id=${padreId}`;
 
   try {
 
@@ -79,7 +79,7 @@ async function permisos(perfil, padreId) {
 
 async function getUsuarios () {
 
-  const url = `${urlBase}`;
+  const url = `${urlBaseUsuarios}`;
 
   try {
 
@@ -100,10 +100,34 @@ async function getUsuarios () {
 
 }
 
+async function getUsuarioById (id) {
+
+  const url = `${urlBaseUsuarios}${id}`;
+
+  try {
+
+    // Consumo del servicio 
+    let response = await fetch(url, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        "accept": "application/json",
+      },
+    })
+
+    return response;
+
+  } catch (error) {
+    return "Error al consumir el servicio de usuarios : " + error
+  }
+
+}
+
+
 
 async function eliminarUsuarioPorId(usuarioId,codigoUsuario) {
 
-  const url = urlBase;
+  const url = urlBaseUsuarios;
 
   const json = JSON.stringify({
     id: usuarioId,
