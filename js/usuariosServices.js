@@ -76,3 +76,56 @@ async function permisos(perfil, padreId) {
   }
 
 }
+
+async function getUsuarios () {
+
+  const url = `${urlBase}`;
+
+  try {
+
+    // Consumo del servicio para el login
+    let response = await fetch(url, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        "accept": "application/json",
+      },
+    })
+
+    return response;
+
+  } catch (error) {
+    return "Error al consumir el servicio de usuarios : " + error
+  }
+
+}
+
+
+async function eliminarUsuarioPorId(usuarioId,codigoUsuario) {
+
+  const url = urlBase;
+
+  const json = JSON.stringify({
+    id: usuarioId,
+    eliminadopor: codigoUsuario
+  });
+
+  try {
+
+    // Consumo del servicio para el login
+    let response = await fetch(url, {
+      method: "DELETE",
+      body: json,
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        "accept": "application/json",
+      },
+    })
+
+    return response;
+
+  } catch (error) {
+    return `Error al consumir el servicio de usuarios: ${error}`
+  }
+
+}

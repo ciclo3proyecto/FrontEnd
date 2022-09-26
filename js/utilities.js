@@ -15,8 +15,9 @@ function mensaje(titulo, texto) {
 //este es especifico cuando se intentar ingresar a una pagina sin haberse logueado
 const myModalEl = document.getElementById("exampleModalCenter");
 myModalEl.addEventListener("hidden.bs.modal", (event) => {
-  rutas("../index.html");
+    rutas("../index.html");
 });
+
 
 //Me permite abrir un formulario
 const rutas = (formulario) => {
@@ -30,3 +31,14 @@ const CerrarSesion = () => {
   sessionStorage.removeItem("codigoUsuario");
   rutas("../index.html");
 };
+
+//Permite Mostar Mensaje de eliminar
+function mensajeEliminar(texto) {
+  document.getElementById("MensajeEliminar").innerHTML = texto;
+
+  const myModal = new bootstrap.Modal("#ModalCenterDelete", {
+    keyboard: true,
+    show: true,
+  });
+  myModal.show();
+}

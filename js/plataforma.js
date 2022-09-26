@@ -49,10 +49,5 @@ const mostrarOpciones = async  (perfil,padreId) => {
     else {
         alert("Los datos ingresados son invalidos.");
     }
-    
-    
-
 }
-
-
 
