@@ -1,16 +1,16 @@
 
 
 //Me permite realizar acciones inmediatamente despues de cargar la pagina.
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   
-  cargarSelects();
+  await cargarSelects();
   
   let txtId = document.getElementById("txtId")
   const EditarId = sessionStorage.getItem("EditarId");
  
   if (EditarId != "" && EditarId != null ) {
     txtId.value = EditarId
-    cargarDatosUsuario(EditarId);
+    await cargarDatosUsuario(EditarId);
   }
   else
   {
@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const nombre = sessionStorage.getItem("nombreUsuario");
   const perfil = sessionStorage.getItem("perfil");
   const nombrePerfil = sessionStorage.getItem("nombrePerfil");
+
   
   if (nombre == null) {
     mensaje(
@@ -129,18 +130,16 @@ function guardarRegistro(){
 
   if(validarDatos())
   {
-    const registro = getControles();
 
     //se inserta nuevo registro
     if(registro.txtId.value=="0")
     {
-      console.log("insertar registro")
+      insertarRegistro();
     }
     else //se actualiza registro
     {
-      console.log("actualiza registro")
+       actualizarRegistro();
     }
-    
 
   }
 
@@ -237,4 +236,148 @@ const alert = (message, type) => {
     '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
     '</div>'
   ].join('')
+}
+
+
+const insertarRegistro = async ()=>
+{
+
+  const usuario = getData();
+  const data = await insertarUsuario(usuario);
+
+  if (typeof data == "string") {
+    showError(data);
+    return
+  }
+
+  if (data.ok) {
+      mensajeConfirma("Datos guardados correctamente.")
+      
+  }
+  else
+  {
+    const djson = await data.json();
+    const errores = JSON.parse(JSON.stringify(djson));
+
+    mostrarErrores(errores);
+    
+  }
+  
+}
+
+
+const myModalCC = document.getElementById('ModalCenterConfirma')
+myModalCC.addEventListener('hidden.bs.modal', event => {
+  rutas('../templates/gest_users.html')
+})
+
+
+
+const actualizarRegistro = async ()=>
+{
+
+  const usuario = getData();
+  const data = await actualizarUsuario(usuario);
+
+  if (typeof data == "string") {
+    showError(data);
+    return
+  }
+
+  if (data.ok) {
+      mensajeConfirma("Datos actualizados correctamente.")
+  }
+  else
+  {
+    const djson = await data.json();
+    const errores = JSON.parse(JSON.stringify(djson));
+
+    mostrarErrores(errores);
+    
+  }
+  
+}
+
+function mostrarErrores(errores)
+{
+  let cadena = "Se generaron los siguientes errores:";
+
+  if(errores.errors.Id!=undefined)
+  {
+    cadena += "<br> "+errores.errors.Id[0]
+  }
+
+  if(errores.errors.Login!=undefined)
+  {
+    cadena += "<br> "+errores.errors.Login[0]
+  }
+  
+  if(errores.errors.PerfilesId!=undefined)
+  {
+    cadena += "<br> "+errores.errors.PerfilesId[0]
+  }
+
+  if(errores.errors.Identificacion!=undefined)
+  {
+    cadena += "<br> "+errores.errors.Identificacion[0]
+  }
+
+  if(errores.errors.TiposdocumentosId!=undefined)
+  {
+    cadena += "<br> "+errores.errors.TiposdocumentosId[0]
+  }
+
+  if(errores.errors.Password!=undefined)
+  {
+    cadena += "<br> "+errores.errors.Password[0]
+  }
+
+  if(errores.errors.Nombres!=undefined)
+  {
+    cadena += "<br> "+errores.errors.Nombres[0]
+  }
+
+  if(errores.errors.Primerapellido!=undefined)
+  {
+    cadena += "<br> "+errores.errors.Primerapellido[0]
+  }
+
+  if(errores.errors.Segundoapellido!=undefined)
+  {
+    cadena += "<br> "+errores.errors.Segundoapellido[0]
+  }
+
+  if(errores.errors.Creadopor!=undefined)
+  {
+    cadena += "<br> "+errores.errors.Creadopor[0]
+  }
+
+  if(errores.errors.Actualizapor!=undefined)
+  {
+    cadena += "<br> "+errores.errors.Actualizapor[0]
+  }
+
+  showError(cadena)
+ 
+}
+
+function getData()
+{
+  const data  =
+  {
+    Id: sessionStorage.getItem("EditarId"),
+    perfilesId: document.getElementById("selPerfil").value,
+    tiposdocumentosId: document.getElementById("selTipoDocumento").value,
+    login: document.getElementById("txtUsuario").value,
+    password: document.getElementById("txtClave").value,
+    identificacion: document.getElementById("txtNumero").value,
+    nombres: document.getElementById("txtNombres").value,
+    primerapellido: document.getElementById("txtPrimerApellido").value,
+    segundoapellido: document.getElementById("txtSegundoApellido").value,
+    creadopor: sessionStorage.getItem("codigoUsuario"),
+    actualizapor: sessionStorage.getItem("codigoUsuario")
+  }
+
+  return data; 
+
 }

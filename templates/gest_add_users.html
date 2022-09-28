@@ -129,6 +129,27 @@
         </div>
     </div>
 
+    <!--Modal de Confirmación del guardado o actualizado de los datos-->
+    <div class="modal fade" id="ModalCenterConfirma" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Mensaje del sistema</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div id="MensajeConfirma" class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal"
+                        onclick="CerrarVentana()">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!--Scrips de javascript -->
     <!--primero va el jquery -->
     <script src="../js/jquery-3.6.1.min.js"></script>

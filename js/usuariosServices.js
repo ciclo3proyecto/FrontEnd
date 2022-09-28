@@ -153,3 +153,57 @@ async function eliminarUsuarioPorId(usuarioId,codigoUsuario) {
   }
 
 }
+
+
+async function insertarUsuario(usuario) {
+
+  const url = urlBaseUsuarios;
+
+  const json = JSON.stringify(usuario);
+
+  try {
+
+    // Consumo del servicio para el login
+    let response = await fetch(url, {
+      method: "POST",
+      body: json,
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        "accept": "application/json",
+      },
+    })
+
+    return response;
+
+  } catch (error) {
+    return `Error al consumir el servicio de usuarios: ${error}`
+  }
+
+}
+
+
+async function actualizarUsuario(usuario) {
+
+  const url = urlBaseUsuarios;
+
+  const json = JSON.stringify(usuario);
+
+  try {
+
+    // Consumo del servicio para el login
+    let response = await fetch(url, {
+      method: "PUT",
+      body: json,
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        "accept": "application/json",
+      },
+    })
+
+    return response;
+
+  } catch (error) {
+    return `Error al consumir el servicio de usuarios: ${error}`
+  }
+
+}

@@ -42,3 +42,14 @@ function mensajeEliminar(texto) {
   });
   myModal.show();
 }
+
+//Permite Mostar Mensaje de eliminar
+function mensajeConfirma(texto) {
+  document.getElementById("MensajeConfirma").innerHTML = texto;
+
+  const myModal = new bootstrap.Modal("#ModalCenterConfirma", {
+    keyboard: true,
+    show: true,
+  });
+  myModal.show();
+}
