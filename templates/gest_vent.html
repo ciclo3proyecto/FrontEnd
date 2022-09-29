@@ -1,30 +1,94 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ventas</title>
-    <link rel="stylesheet" href="../styles/stylePlataforma.css">
-    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>Inventory App - Gestión de Usuarios</title>
+    <link rel="icon" type="image/jpg" href="../img/logoInventory.PNG" />
+    <link rel="stylesheet" href="../styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="../styles/stylePlataforma.css" />
 </head>
-<body>
-    <header>
-       <h1>Inventory App</h1> 
-       <div class="logo">
-        <a href="plataforma.html">
-        <img src="../img/logoInventory.PNG" alt="" width="100">
-    </a>
-        <div class="perfil">
-            <h3>Usuario</h2>
+
+<body class="bg-light bg-gradient">
+
+    <!--Navbar-->
+    <nav class="navbar navbar-dark bg-success bg-gradient">
+        <!-- Navbar content -->
+        <div class="container-fluid">
+            <a class="navbar-brand mb-0 h1" href="../templates/plataforma.html">
+                <img src="../img/logoInventory.PNG" alt="Logo" width="30" height="24"
+                    class="d-inline-block align-text-top" />
+                InventoryApp
+            </a>
+
+            <span id="lblUsuario" class="navbar-brand mb-0 h-25">
+                Usuario
+            </span>
+            <button type="button" onclick="CerrarSesion()" class="btn btn-secondary">Cerrar Sesión</button>
         </div>
-    </div>
-    </header>
-    <h1 class="titulo">GESTIÓN DE VENTAS</h1>
+    </nav>
 
     <div align="center">
         <img src="../img/en_construccion.jpg" alt="" height="70%" width="70%">
     </div>
-    
+
+
+    <!-- Modal para los mensajes -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Mensaje del sistema</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="contenedorMensaje" class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal de eliminar-->
+    <div class="modal fade" id="ModalCenterDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Mensaje del sistema</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div id="MensajeEliminar" class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+                        onclick="elimiarId()">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Scrips de javascript -->
+    <!--primero va el jquery -->
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <!--segundo va el boostrap -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!--y los demas -->
+    <script src="../js/utilities.js"></script>
+    <script src="../js/usuariosServices.js"></script>
+    <script src="../js/gest_users.js"></script>
+
 </body>
+
 </html>
