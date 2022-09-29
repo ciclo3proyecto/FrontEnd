@@ -1,102 +1,126 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Inventory App - Gestión productos</title>
-    <link rel="icon" type="image/jpg" href="img/logoInventory.PNG"/>
-    <link rel="stylesheet" href="../styles/stylePlataforma.css">
-    <link rel="stylesheet" href="../styles/bootstrap.min.css">
-    <link rel="stylesheet" href="../styles/styleGestUsers.css">
+    <link rel="icon" type="image/jpg" href="../img/logoInventory.PNG" />
+    <link rel="stylesheet" href="../styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="../styles/stylePlataforma.css" />
 </head>
-
-<body>
-
-    <header>
-        <h1>Inventory App</h1>
-        <div class="logo">
-            <a href="plataforma.html">
-                <img src="../img/logoInventory.PNG" alt="" width="100">
+<body class="bg-light bg-gradient">
+    <!--Navbar-->
+    <nav class="navbar navbar-dark bg-success bg-gradient">
+        <!-- Navbar content -->
+        <div class="container-fluid">
+            <a class="navbar-brand mb-0 h1" href="../templates/plataforma.html">
+                <img src="../img/logoInventory.PNG" alt="Logo" width="30" height="24"
+                    class="d-inline-block align-text-top" />
+                InventoryApp
             </a>
-            <div class="perfil">
-                <h3>Usuario</h2>
+
+            <span id="lblUsuario" class="navbar-brand mb-0 h-25">
+                Usuario
+            </span>
+            <button type="button" onclick="CerrarSesion()" class="btn btn-secondary">Cerrar Sesión</button>
+        </div>
+    </nav>
+
+    <!--Formulario -->
+    <div class="container" style="padding-top: 20px;" >
+    
+        <h1><i>Registrar o editar producto</i></h1>
+        <input type="hidden" id="txtId" name="txtIdname" value="0">
+
+        <div class="row ">
+            <label for="txtCodigo" class="col-sm-2 col-form-label">Codigo</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="txtCodigo" placeholder="Ingrese el código del producto">
             </div>
         </div>
-    </header>
 
-    <h1 class="titulo">Registrar o editar producto</h1>
-
-    <br>
-    <form method="get" action="gest_produc.html">
-        <table style="margin: 0 auto;">
-            <div class="form-group">
-                <tr>
-                    <td>
-                        <label for="campoCodigo">Código (*)</label>
-                    </td>
-                    <td>
-                        <input type="text" class="form-control" id="campoCodigo" placeholder="Ingrese el código"
-                            name="cCodigo" required>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="campoNombre">Nombre (*)</label>
-                    </td>
-                    <td>
-                        <input type="text" class="form-control" id="campoNombre" placeholder="Ingrese el nombre"
-                            name="cNombre" required>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="campoDescripcion">Descripción</label>
-                    </td>
-                    <td>
-                        <textarea class="form-control" id="campoDescripcion" rows="3"
-                            placeholder="Ingrese una descripción del producto" name="cDescripcion"></textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="campoCantidad">Cantidad (*)</label>
-                    </td>
-                    <td>
-                        <input type="number" class="form-control" id="campoCantidad" min="0"
-                            placeholder="Ingrese la cantidad" name="cCantidad" required>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="campoExistencia">Existencia</label>
-                    </td>
-                    <td>
-                        <input type="number" class="form-control" id="campoExistencia" min="0"
-                            placeholder="Ingrese la existencia inicial" name="cExistencia">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="campoPrecio">Precio (*)</label>
-                    </td>
-                    <td>
-                        <input type="number" class="form-control" id="campoPrecio" min="0"
-                            placeholder="Ingrese el precio" name="cPrecio" required>
-                    </td>
-                </tr>
+        <div class="row ">
+            <label for="txtNombre" class="col-sm-2 col-form-label">Nombre</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="txtNombre" placeholder="Ingrese el nombre del producto">
             </div>
-        </table>
-        <br>
+        </div>
+
+        <div class="row">
+            <label for="txtPrecio" class="col-sm-2 col-form-label">Precio</label>
+            <div class="col-sm-5">
+                <input type="number" class="form-control" id="txtPrecio" min="0" placeholder="Ingrese él precio del producto">
+            </div>
+        </div>
+
+        <div id="errorBox" class="form-error" style="margin-top: 10px;">
+        </div>
+
         <div style="text-align: center;">
-            <button type="submit" class="btn btn-primary btn-lg"
-                style="background-color: rgb(103, 226, 103); border-color:rgb(103, 226, 103) ;">Guardar</button>
-            <button onclick="location.href='gest_produc.html'" type="button"
-                class="btn btn-secondary btn-lg">Cancelar</button>
+            <br>
+            <button type="submit" onclick="guardarRegistro()" class="btn btn-success btn">Guardar</button>
+            <button onclick="rutas('gest_users.html')" type="button"
+                class="btn btn-secondary btn">Cancelar</button>
         </div>
-    </form>
 
+        
+    </div>
+
+
+    <!-- Modal para los mensajes -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Mensaje del sistema</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="contenedorMensaje" class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal de Confirmación del guardado o actualizado de los datos-->
+    <div class="modal fade" id="ModalCenterConfirma" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Mensaje del sistema</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div id="MensajeConfirma" class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal"
+                        onclick="CerrarVentana()">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Scrips de javascript -->
+    <!--primero va el jquery -->
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <!--segundo va el boostrap -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!--y los demas -->
+    <script src="../js/utilities.js"></script>
+    <script src="../js/perfilesServices.js"></script>
+    <script src="../js/tiposDocumentosServices.js"></script>
+    <script src="../js/usuariosServices.js"></script>
+    <script src="../js/gest_add_users.js"></script>
 </body>
-
 </html>
