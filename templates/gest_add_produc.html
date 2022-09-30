@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="../styles/bootstrap.min.css" />
     <link rel="stylesheet" href="../styles/stylePlataforma.css" />
 </head>
+
 <body class="bg-light bg-gradient">
     <!--Navbar-->
     <nav class="navbar navbar-dark bg-success bg-gradient">
@@ -29,53 +31,57 @@
     </nav>
 
     <!--Formulario -->
-    <div class="container" style="padding-top: 20px;" >
-    
+    <div class="container" style="padding-top: 20px;">
+
         <h1><i>Registrar o editar producto</i></h1>
         <input type="hidden" id="txtId" name="txtIdname" value="0">
 
-        <div class="row ">
+        <div class="row">
             <label for="txtCodigo" class="col-sm-2 col-form-label">Codigo</label>
             <div class="col-sm-5">
-                <input type="text" class="form-control" id="txtCodigo" placeholder="Ingrese el código del producto">
+                <input type="text" class="form-control" id="txtCodigo" maxlength="10"
+                    placeholder="Ingrese el código del producto">
             </div>
         </div>
 
-        <div class="row ">
+        <div class="row">
             <label for="txtNombre" class="col-sm-2 col-form-label">Nombre</label>
             <div class="col-sm-5">
-                <input type="text" class="form-control" id="txtNombre" placeholder="Ingrese el nombre del producto">
+                <input type="text" class="form-control" id="txtNombre" maxlength="50"
+                    placeholder="Ingrese el nombre del producto">
             </div>
         </div>
 
-        <div class="row ">
+        <div class="row">
             <label for="txtDescripcion" class="col-sm-2 col-form-label">Descripcion</label>
             <div class="col-sm-5">
                 <textarea class="form-control" id="txtDescripcion" rows="3" maxlength="250"
-                            placeholder="Ingrese una descripción del producto"></textarea>
+                    placeholder="Ingrese una descripción del producto"></textarea>
             </div>
         </div>
 
         <div class="row">
             <label for="txtPrecio" class="col-sm-2 col-form-label">Precio</label>
             <div class="col-sm-5">
-                <input type="number" class="form-control" id="txtPrecio" min="0" placeholder="Ingrese el precio del producto">
+                <input type="number" class="form-control" id="txtPrecio" min="0"
+                    placeholder="Ingrese el precio del producto">
             </div>
         </div>
 
         <div class="row">
             <label for="txtExistencia" class="col-sm-2 col-form-label">Existencia</label>
             <div class="col-sm-5">
-                <input type="number" class="form-control" id="txtExistencia" min="0" placeholder="Ingrese la existencia del producto">
+                <input type="number" class="form-control" id="txtExistencia" min="0"
+                    placeholder="Ingrese la existencia del producto">
             </div>
         </div>
 
         <div class="row">
             <label for="selEstado" class="col-sm-2 col-form-label">Estado</label>
             <div class="col-sm-5">
-                <select class="form-select" id="selEstado" aria-label="Default select example">
+                <select class="form-select" id="selEstado" maxlength="13" aria-label="Default select example">
                     <option selected>Seleccione...</option>
-                  </select>
+                </select>
             </div>
         </div>
 
@@ -85,11 +91,10 @@
         <div style="text-align: center;">
             <br>
             <button type="submit" onclick="guardarRegistro()" class="btn btn-success btn">Guardar</button>
-            <button onclick="rutas('gest_produc.html')" type="button"
-                class="btn btn-secondary btn">Cancelar</button>
+            <button onclick="rutas('gest_produc.html')" type="button" class="btn btn-secondary btn">Cancelar</button>
         </div>
 
-        
+
     </div>
 
 
@@ -115,8 +120,8 @@
     </div>
 
     <!--Modal de Confirmación del guardado o actualizado de los datos-->
-    <div class="modal fade" id="ModalCenterConfirma" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
+    <div class="modal fade" id="ModalCenterConfirma" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -147,4 +152,5 @@
     <script src="../js/usuariosServices.js"></script>
     <script src="../js/gest_add_users.js"></script>
 </body>
+
 </html>

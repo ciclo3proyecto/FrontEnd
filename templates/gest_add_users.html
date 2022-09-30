@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="../styles/bootstrap.min.css" />
     <link rel="stylesheet" href="../styles/stylePlataforma.css" />
 </head>
+
 <body class="bg-light bg-gradient">
     <!--Navbar-->
     <nav class="navbar navbar-dark bg-success bg-gradient">
@@ -29,22 +31,22 @@
     </nav>
 
     <!--Formulario -->
-    <div class="container" style="padding-top: 20px;" >
-    
+    <div class="container" style="padding-top: 20px;">
+
         <h1><i>Registrar o editar usuario</i></h1>
         <input type="hidden" id="txtId" name="txtIdname" value="0">
 
-        <div class="row ">
+        <div class="row">
             <label for="txtUsuario" class="col-sm-2 col-form-label">Usuario</label>
             <div class="col-sm-5">
-                <input type="text" class="form-control" id="txtUsuario" placeholder="Ingrese el usuario">
+                <input type="text" class="form-control" id="txtUsuario" maxlength="50" placeholder="Ingrese el usuario">
             </div>
         </div>
-        
+
         <div class="row">
             <label for="txtClave" class="col-sm-2 col-form-label">Clave</label>
             <div class="col-sm-5">
-                <input type="password" class="form-control" id="txtClave" placeholder="Ingrese la clave">
+                <input type="password" class="form-control" id="txtClave" maxlength="50" placeholder="Ingrese la clave">
             </div>
         </div>
 
@@ -53,7 +55,7 @@
             <div class="col-sm-5">
                 <select class="form-select" id="selPerfil" aria-label="Default select example">
                     <option selected>Seleccione...</option>
-                  </select>
+                </select>
             </div>
         </div>
 
@@ -62,7 +64,7 @@
             <div class="col-sm-5">
                 <select class="form-select" id="selTipoDocumento" aria-label="Default select example">
                     <option selected>Seleccione...</option>
-                  </select>
+                </select>
             </div>
         </div>
 
@@ -76,21 +78,24 @@
         <div class="row">
             <label for="txtNombres" class="col-sm-2 col-form-label">Nombres</label>
             <div class="col-sm-5">
-                <input type="text" class="form-control" id="txtNombres" placeholder="Ingrese sus nombres">
+                <input type="text" class="form-control" id="txtNombres" maxlength="250"
+                    placeholder="Ingrese sus nombres">
             </div>
         </div>
 
         <div class="row">
             <label for="txtPrimerApellido" class="col-sm-2 col-form-label">Primer Apellido</label>
             <div class="col-sm-5">
-                <input type="text" class="form-control" id="txtPrimerApellido" placeholder="Ingrese su primer apellido">
+                <input type="text" class="form-control" id="txtPrimerApellido" maxlength="100"
+                    placeholder="Ingrese su primer apellido">
             </div>
         </div>
 
         <div class="row">
             <label for="txtSegundoApellido" class="col-sm-2 col-form-label">Segundo Apellido</label>
             <div class="col-sm-5">
-                <input type="text" class="form-control" id="txtSegundoApellido" placeholder="Ingrese su segundo apellido">
+                <input type="text" class="form-control" id="txtSegundoApellido" maxlength="100"
+                    placeholder="Ingrese su segundo apellido">
             </div>
         </div>
 
@@ -100,11 +105,10 @@
         <div style="text-align: center;">
             <br>
             <button type="submit" onclick="guardarRegistro()" class="btn btn-success btn">Guardar</button>
-            <button onclick="rutas('gest_users.html')" type="button"
-                class="btn btn-secondary btn">Cancelar</button>
+            <button onclick="rutas('gest_users.html')" type="button" class="btn btn-secondary btn">Cancelar</button>
         </div>
 
-        
+
     </div>
 
 
@@ -130,8 +134,8 @@
     </div>
 
     <!--Modal de Confirmación del guardado o actualizado de los datos-->
-    <div class="modal fade" id="ModalCenterConfirma" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
+    <div class="modal fade" id="ModalCenterConfirma" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -162,4 +166,5 @@
     <script src="../js/usuariosServices.js"></script>
     <script src="../js/gest_add_users.js"></script>
 </body>
+
 </html>
