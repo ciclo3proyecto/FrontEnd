@@ -121,3 +121,18 @@ div [class^="col-"] {
 .card:focus::after {
     transform: scale3d(1, 1, 1);
 }
+
+/* Style buttons */
+.btn {
+    background-color: rgb(105,105,105); /* Blue background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 12px 16px; /* Some padding */
+    font-size: 16px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+  }
+  
+  /* Darker background on mouse-over */
+  .btn:hover {
+    background-color: rgb(47,79,79);
+  }
