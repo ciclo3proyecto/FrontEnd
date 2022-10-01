@@ -1,0 +1,18 @@
+
+h1,
+h3 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+body {
+
+    background-color: rgb(222, 252, 232);
+}
+
+.btn-AddEdit{
+  margin-top: 2%;
+  background-color: rgb(49, 152, 49) !important;
+  color: #fff;
+}
+

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>Inventory App - Gestión usuarios</title>
+    <link rel="icon" type="image/jpg" href="../img/logoInventory.PNG" />
+    <link rel="stylesheet" href="../styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="../styles/stylePlataforma.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="bg-light bg-gradient">
+    <!--Navbar-->
+    <nav class="navbar navbar-dark bg-success bg-gradient">
+        <!-- Navbar content -->
+        <div class="container-fluid">
+            <a class="navbar-brand mb-0 h1" href="../templates/plataforma.html">
+                <img src="../img/logoInventory.PNG" alt="Logo" width="30" height="24"
+                    class="d-inline-block align-text-top" />
+                InventoryApp
+            </a>
+
+            <span id="lblUsuario" class="navbar-brand mb-0 h-25">
+                Usuario
+            </span>
+
+            <span>
+                <button class="btn btn-secondary" onclick="rutas('plataforma.html')"><i class="fa fa-home"></i> Inicio</button>
+
+                <button type="button" onclick="CerrarSesion()" class="btn btn-secondary">Cerrar Sesión</button>
+            </span>
+
+        </div>
+    </nav>
+
+    <!--Formulario -->
+    <div class="container" style="padding-top: 20px;">
+
+        <h1><i>Registrar o editar usuario</i></h1>
+        <input type="hidden" id="txtId" name="txtIdname" value="0">
+
+        <div class="row">
+            <label for="txtUsuario" class="col-sm-2 col-form-label">Usuario</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="txtUsuario" maxlength="50" placeholder="Ingrese el usuario">
+            </div>
+        </div>
+
+        <div class="row">
+            <label for="txtClave" class="col-sm-2 col-form-label">Clave</label>
+            <div class="col-sm-5">
+                <input type="password" class="form-control" id="txtClave" maxlength="50" placeholder="Ingrese la clave">
+            </div>
+        </div>
+
+        <div class="row">
+            <label for="selPerfil" class="col-sm-2 col-form-label">Perfil</label>
+            <div class="col-sm-5">
+                <select class="form-select" id="selPerfil" aria-label="Default select example">
+                    <option selected>Seleccione...</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <label for="selTipoDocumento" class="col-sm-2 col-form-label">Tipo de Documento</label>
+            <div class="col-sm-5">
+                <select class="form-select" id="selTipoDocumento" aria-label="Default select example">
+                    <option selected>Seleccione...</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <label for="txtNumero" class="col-sm-2 col-form-label">Número de Documentos</label>
+            <div class="col-sm-5">
+                <input type="number" class="form-control" id="txtNumero" placeholder="Ingrese él numero de documento">
+            </div>
+        </div>
+
+        <div class="row">
+            <label for="txtNombres" class="col-sm-2 col-form-label">Nombres</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="txtNombres" maxlength="250"
+                    placeholder="Ingrese sus nombres">
+            </div>
+        </div>
+
+        <div class="row">
+            <label for="txtPrimerApellido" class="col-sm-2 col-form-label">Primer Apellido</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="txtPrimerApellido" maxlength="100"
+                    placeholder="Ingrese su primer apellido">
+            </div>
+        </div>
+
+        <div class="row">
+            <label for="txtSegundoApellido" class="col-sm-2 col-form-label">Segundo Apellido</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="txtSegundoApellido" maxlength="100"
+                    placeholder="Ingrese su segundo apellido">
+            </div>
+        </div>
+
+        <div id="errorBox" class="form-error" style="margin-top: 10px;">
+        </div>
+
+        <div style="text-align: center;">
+            <br>
+            <button type="submit" onclick="guardarRegistro()" class="btn btn-success btn">Guardar</button>
+            <button onclick="rutas('gest_users.html')" type="button" class="btn btn-secondary btn">Cancelar</button>
+        </div>
+
+
+    </div>
+
+
+    <!-- Modal para los mensajes -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Mensaje del sistema</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="contenedorMensaje" class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal de Confirmación del guardado o actualizado de los datos-->
+    <div class="modal fade" id="ModalCenterConfirma" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Mensaje del sistema</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div id="MensajeConfirma" class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal"
+                        onclick="CerrarVentana()">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Scrips de javascript -->
+    <!--primero va el jquery -->
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <!--segundo va el boostrap -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!--y los demas -->
+    <script src="../js/utilities.js"></script>
+    <script src="../js/perfilesServices.js"></script>
+    <script src="../js/tiposDocumentosServices.js"></script>
+    <script src="../js/usuariosServices.js"></script>
+    <script src="../js/gest_add_users.js"></script>
+</body>
+
+</html>

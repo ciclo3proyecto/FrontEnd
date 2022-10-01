@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <title>Inventory App - Opciones</title>
+  <link rel="icon" type="image/jpg" href="../img/logoInventory.PNG" />
+  <link rel="stylesheet" href="../styles/bootstrap.min.css" />
+  <link rel="stylesheet" href="../styles/stylePlataforma.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+</head>
+
+<body class="bg-light bg-gradient">
+  <!--Navbar-->
+  <nav class="navbar navbar-dark bg-success bg-gradient">
+    <!-- Navbar content -->
+    <div class="container-fluid">
+      <a class="navbar-brand mb-0 h1" href="#">
+        <img src="../img/logoInventory.PNG" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" />
+        InventoryApp
+      </a>
+
+      <span id="lblUsuario" class="navbar-brand mb-0 h-25">
+        Usuario
+      </span>
+      <button type="button" onclick="CerrarSesion()" class="btn btn-secondary">Cerrar Sesión</button>
+    </div>
+  </nav>
+
+  <!--cards-->
+  <div class="container mt-2">
+    <!-- Para los Modulos     -->
+    <div id="modulosContainer" class="row">
+    
+    </div>
+
+  </div>
+
+  <!-- Modal para los mensajes -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Mensaje del sistema</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="contenedorMensaje" class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Scrips de javascript -->
+  <!--primero va el jquery -->
+  <script src="../js/jquery-3.6.1.min.js"></script>
+  <!--segundo va el boostrap -->
+  <script src="../js/bootstrap.min.js"></script>
+  <!--y los demas -->
+  <script src="../js/plataforma.js"></script>
+  <script src="../js/utilities.js"></script>
+  <script src="../js/usuariosServices.js"></script>
+
+</body>
+
+</html>
