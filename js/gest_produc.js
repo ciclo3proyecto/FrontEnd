@@ -20,8 +20,9 @@ document.addEventListener('DOMContentLoaded', () =>{
 
 })
 
+
 const listarDatos = async () => {
-    const data =  await getUsuarios();
+    const data =  await getProductos();
     const modulosContainer = document.querySelector('#tabla');
 
     if (typeof data == "string") 
@@ -34,20 +35,22 @@ const listarDatos = async () => {
     {
         const djson = await data.json();
         const ojson = JSON.parse(JSON.stringify(djson));
-
+        console.log(ojson)
         let cadena = "";
-        ojson.forEach(usuario => {
+        ojson.forEach(producto => {
             
             cadena += 
                     `<tr>
-                        <th scope="row">${usuario.id}</th>
-                        <th>${usuario.login}</th>
-                        <td>${usuario.nombres} ${usuario.primerapellido} ${usuario.segundoapellido}</td>
-                        <td>${usuario.nombrePerfil}</td>
+                        <th scope="row">${producto.id}</th>
+                        <th>${producto.codigo}</th>
+                        <th>${producto.nombre}</th>
+                        <th>${producto.descripcionUnidad}</th>
+                        <th>${producto.precio}</th>
+                        <th>${producto.existencia}</th>
                         <td>
                             <button type="button" class="btn btn-warning btn-sm"
-                                onclick="editar(${usuario.id},'../templates/gest_add_users.html')">Editar</button>
-                            <button type="button" class="btn btn-danger btn-sm" onclick="modalEliminar(${usuario.id})">Eliminar</button>
+                                onclick="editar(${producto.id},'../templates/gest_add_produc.html')">Editar</button>
+                            <button type="button" class="btn btn-danger btn-sm" onclick="modalEliminar(${producto.id})">Eliminar</button>
                         </td>
                      </tr>
                     `
@@ -57,7 +60,7 @@ const listarDatos = async () => {
         modulosContainer.innerHTML = cadena
 
     }else{
-        alert("Error al consumir servicio de usuarios.");
+        alert("Error al consumir servicio de productos.");
     }
 
 }
@@ -66,7 +69,7 @@ const elimiarId = async () =>{
     const id = sessionStorage.getItem("EliminarId");
     const codigoUsuario = sessionStorage.getItem("codigoUsuario");
     
-    const data =  await eliminarUsuarioPorId(id,codigoUsuario);
+    const data =  await eliminarProductoPorId(id,codigoUsuario);
 
     if (typeof data == "string") 
     {
@@ -85,7 +88,3 @@ const elimiarId = async () =>{
 
     }
 }
-
-
-
-

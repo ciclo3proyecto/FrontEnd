@@ -1,5 +1,3 @@
-
-
 //Me permite realizar acciones inmediatamente despues de cargar la pagina.
 document.addEventListener("DOMContentLoaded", async () => {
   

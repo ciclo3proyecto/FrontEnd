@@ -53,3 +53,24 @@ function mensajeConfirma(texto) {
   });
   myModal.show();
 }
+
+//Función que se utiliza en los cruds para el boton de agregar registro.
+const agregar = (ruta) =>{
+  sessionStorage.removeItem("EditarId");
+  sessionStorage.removeItem("EliminarId");
+  rutas(ruta)
+}
+
+//Función que se utiliza para poner el mensaje o modal de preguntar el eliminado del registro
+const modalEliminar=(id)=>{
+  const mensaje=`Esta seguro que desea eliminar el usuario con Id ${id}?`
+  sessionStorage.setItem("EliminarId",id);
+  mensajeEliminar(mensaje);
+}
+
+//Función que se utiliza para llamar el formulario de editar el registro.
+const editar = (id,ruta) =>{
+  sessionStorage.setItem("EditarId",id);
+  console.log(id);    
+  rutas(ruta);
+}
